@@ -18,7 +18,8 @@ resource "template_file" "update" {
     group           = "${var.update_group}"
     server          = "${var.update_server}"
   }
-}
-lifecycle {
-  create_before_destroy = true
+  
+  lifecycle {
+    create_before_destroy = true
+  }
 }
