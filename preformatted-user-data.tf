@@ -9,4 +9,7 @@ resource "template_file" "preformatted-user-data" {
     write_files         = "${template_file.write_files.rendered}"
     manage_etc_hosts    = "${template_file.manage_etc_hosts.rendered}"
   }
+  lifecycle {
+    create_before_destroy = true
+  }
 }

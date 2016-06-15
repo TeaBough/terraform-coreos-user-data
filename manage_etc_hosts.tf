@@ -8,4 +8,7 @@ resource "template_file" "manage_etc_hosts" {
   vars {
     manage_etc_hosts = "${var.manage_etc_hosts}"
   }
+  lifecycle {
+    create_before_destroy = true
+  }
 }

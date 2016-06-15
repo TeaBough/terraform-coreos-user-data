@@ -8,4 +8,7 @@ resource "template_file" "hostname" {
   vars {
     hostname = "${var.hostname}"
   }
+  lifecycle {
+    create_before_destroy = true
+  }
 }

@@ -19,3 +19,6 @@ resource "template_file" "update" {
     server          = "${var.update_server}"
   }
 }
+lifecycle {
+  create_before_destroy = true
+}

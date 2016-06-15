@@ -8,4 +8,7 @@ resource "template_file" "user-data" {
   vars {
     preformatted-user-data = "${template_file.preformatted-user-data.rendered}"
   }
+  lifecycle {
+    create_before_destroy = true
+  }
 }

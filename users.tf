@@ -8,4 +8,7 @@ resource "template_file" "users" {
   vars {
     users = "${var.users}"
   }
+  lifecycle {
+    create_before_destroy = true
+  }
 }

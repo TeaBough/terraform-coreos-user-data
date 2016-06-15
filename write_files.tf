@@ -8,4 +8,7 @@ resource "template_file" "write_files" {
   vars {
     write_files = "${var.write_files}"
   }
+  lifecycle {
+    create_before_destroy = true
+  }
 }
